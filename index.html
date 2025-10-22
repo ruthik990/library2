@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!-- Home Page -->
+<div class="home" id="home">
+  <div class="home-overlay">
+    <div class="home-content">
+      <h1>📚 Welcome to the Library App</h1>
+      <p>Explore, manage, and discover books easily</p>
+      <button class="btn-library" onclick="showLogin()">Librarian Login</button>
+      <button class="btn-user" onclick="showUser()">Browse as User</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Librarian Login -->
+<div class="login" id="login">
+  <div class="login-overlay">
+    <div class="login-card">
+      <h2>🔐 Librarian Login</h2>
+      <input type="text" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <div class="back-btn" onclick="goHome()">⬅ Back</div>
+    </div>
+  </div>
+</div>
+
+  <!-- User Page -->
+  <div class="user-page" id="userPage">
+    <h2>Available Books</h2>
+
+    <select id="filterCategory" onchange="filterByCategory()">
+      <option value="all">All Categories</option>
+    </select>
+
+    <div class="book-list" id="bookList"></div>
+    <div class="back-btn" onclick="goHome()">⬅ Back</div>
+  </div>
+
+  <!-- Librarian Dashboard -->
+<div class="dashboard" id="dashboard">
+  <div class="dashboard-overlay">
+    <div class="dashboard-card">
+      <h2>📘 Librarian Dashboard</h2>
+
+      <div class="form">
+        <input type="text" id="bookTitle" placeholder="Book Title">
+        <input type="text" id="bookAuthor" placeholder="Book Author">
+        <input type="text" id="bookCategory" placeholder="Category (e.g. Fiction)">
+        <button onclick="addBook()">Add Book</button>
+      </div>
+
+      <button class="btn-library" onclick="openBookList()">📚 View All Books</button>
+
+      <div class="back-btn" onclick="logout()">🚪 Logout</div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Librarian Book List Page -->
+  <div class="admin-books" id="adminBooks">
+    <h2>📖 All Books</h2>
+    <div class="book-list" id="adminBookList"></div>
+    <div class="back-btn" onclick="backToDashboard()">⬅ Back to Dashboard</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
