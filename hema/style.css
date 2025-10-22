@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.home, .login, .user-page, .dashboard, .admin-books {
+  width: 100%;
+  max-width: 400px;
+  display: none;
+}
+
+.home { display: block; text-align: center; }
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-library { background: #3498db; color: white; }
+.btn-library:hover { background: #2980b9; }
+
+.btn-user { background: #2ecc71; color: white; }
+.btn-user:hover { background: #27ae60; }
+
+.login input, .form input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login button, .form button {
+  background: #3498db;
+  color: white;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.book {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.book h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.book p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.back-btn {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  background: #e74c3c;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  .book-list { grid-template-columns: 1fr; }
+}
+/* ===== BEAUTIFUL LIBRARIAN DASHBOARD ===== */
+
+.dashboard {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80')
+              center/cover no-repeat;
+}
+
+.dashboard-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.6s ease;
+}
+
+.dashboard-card h2 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.dashboard-card .form input {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.dashboard-card .form button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dashboard-card .form button:hover {
+  background: #2980b9;
+}
+
+.dashboard-card .btn-library {
+  margin-top: 15px;
+  background: #27ae60;
+}
+
+.dashboard-card .btn-library:hover {
+  background: #219150;
+}
+
+.dashboard-card .back-btn {
+  margin-top: 15px;
+  background: #e74c3c;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.dashboard-card .back-btn:hover {
+  background: #c0392b;
+}
+
+/* Smooth entrance animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .dashboard-card {
+    width: 90%;
+    padding: 20px;
+  }
+}
+/* ===== BEAUTIFUL HOME PAGE ===== */
+
+.home {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1920&q=80')
+              center/cover no-repeat;
+}
+
+.home-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.home-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px 20px;
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+.home-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fefefe;
+}
+
+.home-content p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.home-content button {
+  width: 100%;
+  max-width: 250px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  margin: 10px auto;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-content .btn-library {
+  background: #3498db;
+  color: white;
+}
+
+.home-content .btn-library:hover {
+  background: #2980b9;
+}
+
+.home-content .btn-user {
+  background: #2ecc71;
+  color: white;
+}
+
+.home-content .btn-user:hover {
+  background: #27ae60;
+}
+
+@media (max-width: 600px) {
+  .home-content {
+    padding: 25px 15px;
+  }
+  .home-content h1 {
+    font-size: 1.6rem;
+  }
+}
+/* ===== BEAUTIFUL LOGIN PAGE ===== */
+
+.login {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1920&q=80')
+              center/cover no-repeat;
+}
+
+.login-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+  animation: fadeIn 0.6s ease;
+}
+
+.login-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #3498db;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-card button:hover {
+  background: #2980b9;
+}
+
+.login-card .back-btn {
+  margin-top: 15px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.login-card .back-btn:hover {
+  background: #c0392b;
+}
+
+/* Reuse fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    width: 90%;
+    padding: 25px 15px;
+  }
+}
